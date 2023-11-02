@@ -1,7 +1,7 @@
 import { Body, Controller, Put, UseGuards } from '@nestjs/common'
 import { CurrentUser } from '@/auth/current-user-decorator'
 import { JwtAuthGuard } from '@/auth/jwt-auth.guard'
-import { UserPayload } from '@/auth/jwt.strategy'
+import { UserPayload } from '@/auth/firebase-jwt.strategy'
 import { PrismaService } from '@/prisma/prisma.service'
 import { z } from 'zod'
 import { ZodValidationPipe } from '@/pipes/zod-validation-pipe'

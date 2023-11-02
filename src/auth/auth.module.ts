@@ -3,7 +3,8 @@ import { ConfigService } from '@nestjs/config'
 import { JwtModule } from '@nestjs/jwt'
 import { PassportModule } from '@nestjs/passport'
 import { Env } from '@/env'
-import { JwtFirebaseStrategy } from './jwt.strategy'
+import { JwtFirebaseStrategy } from './firebase-jwt.strategy'
+import { FirebaseService } from './firebase.service'
 
 @Module({
   imports: [
@@ -23,7 +24,7 @@ import { JwtFirebaseStrategy } from './jwt.strategy'
       },
     }),
   ],
-  providers: [JwtFirebaseStrategy],
-  exports: [JwtFirebaseStrategy],
+  providers: [JwtFirebaseStrategy, FirebaseService], // Added FirebaseService here
+  exports: [JwtFirebaseStrategy, FirebaseService],
 })
 export class AuthModule {}

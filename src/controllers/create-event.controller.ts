@@ -4,7 +4,7 @@ import { ZodValidationPipe } from '@/pipes/zod-validation-pipe'
 import { PrismaService } from '@/prisma/prisma.service'
 import { z } from 'zod'
 import { CurrentUser } from '@/auth/current-user-decorator'
-import { UserPayload } from '@/auth/jwt.strategy'
+import { UserPayload } from '@/auth/firebase-jwt.strategy'
 
 const createEventBodySchema = z.object({
   title: z.string(),
