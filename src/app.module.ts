@@ -12,6 +12,7 @@ import { UpdateInterestController } from './controllers/update-interest.controll
 import { FetchInterestsController } from './controllers/fetch-interests.controller'
 import { CreateEventController } from './controllers/create-event.controller'
 import { FetchEventsController } from './controllers/fetch-events.controller'
+import { FetchUserController } from './controllers/fetch-account.controller'
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { FetchEventsController } from './controllers/fetch-events.controller'
     FetchRecentQuestionController,
     FetchInterestsController,
     FetchEventsController,
+    FetchUserController,
   ],
   providers: [PrismaService],
 })

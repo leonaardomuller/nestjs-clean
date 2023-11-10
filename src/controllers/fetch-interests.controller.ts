@@ -9,7 +9,15 @@ export class FetchInterestsController {
 
   @Get()
   async handle() {
-    const interests = await this.prisma.interest.findMany()
+    const interests = await this.prisma.interest.findMany({
+      include: {
+        followers: {
+          select: {
+            id: true,
+          },
+        },
+      },
+    })
 
     return {
       interests,
